@@ -1,13 +1,14 @@
 # ARR-Static-WPTheme
-A Rosebud Rejoicing WordPress Theme, Static Version.
+######*A Rosebud Rejoicing WordPress Theme, Static Version*######
 
 Development at: http://devblogarosebudrejoicing-kalikakay.rhcloud.com/
 
-OpenShit Server Dev Variable Set
-
+######OpenShit Server Dev Variable Set#######
+```
 $ rhc env set APPLICATION_ENV=development -a <app-name>
 
 $ rhc app restart -a <app-name>
+```
 
 ###Regarding OpenShift Themes###
 
@@ -25,7 +26,7 @@ https://codex.wordpress.org/Theme_Development
 
 https://developer.wordpress.org/reference/
 
-######Theme approval######
+######*Theme approval*######
 
 https://make.wordpress.org/themes/handbook/review/
 
@@ -70,10 +71,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 ######common templates:######
 
 **style.css**
-    The main stylesheet. This must be included with your Theme, and it must contain the information header for your Theme.
+The main stylesheet. This must be included with your Theme, and it must contain the information header for your Theme.
 
 **rtl.css**
-    The rtl stylesheet. This will be included automatically if the website's text direction is right-to-left. This can be generated using the RTLer plugin.
+ The rtl stylesheet. This will be included automatically if the website's text direction is right-to-left. This can be generated using the RTLer plugin.
 
 **index.php**
 
