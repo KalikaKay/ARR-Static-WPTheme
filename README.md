@@ -169,12 +169,11 @@ It looks fascinating and like a bit of fun; but - I'm not going to use is for th
 I'm not in need of a method to access my site through an API - I'll stick to Javascript and CSS, I think... I THINK. 
 
 *In case I change my mind:*
-[Rest Api Plugin](https://wordpress.org/plugins/rest-api/)
-
-[Anadama]([http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react) for an example
-
-[Github](https://github.com/ryelle/Anadama-React) links
-
-[Foxhound](https://themes.redradar.net/foxhound/) is another example. Here's [github](https://github.com/ryelle/Foxhound) links 
 
 Here's a [how-to](http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react)
+
+[Rest Api Plugin](https://wordpress.org/plugins/rest-api/)
+
+[Anadama]([http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react) for an example. Here's  [Github](https://github.com/ryelle/Anadama-React) links
+
+[Foxhound](https://themes.redradar.net/foxhound/) is another example. Here's [Github](https://github.com/ryelle/Foxhound) links 
