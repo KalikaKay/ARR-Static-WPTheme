@@ -10,13 +10,12 @@ $ rhc env set APPLICATION_ENV=development -a <app-name>
 $ rhc app restart -a <app-name>
 ```
 
-###Regarding OpenShift Themes###
-
-#Oh, my GOD! most gorgeous instructions I've ever seen in my life!!!!!#
+###Oh, my GOD! most gorgeous instructions I've ever seen in my life!!!!!###
 
 https://yoast.com/wordpress-theme-anatomy/
-#####Plugins and Theme#####
 
+
+###Regarding OpenShift Themes###
 When you upload plugins and themes, they'll get put into your OpenShift
 data directory on the gear ($OPENSHIFT_DATA_DIR).
 
@@ -155,7 +154,7 @@ https://codex.wordpress.org/Theme_Development keep in touch with this for inform
 
 **Functions.php**
 
-
+#####Plugins and Theme#####
 Information regarding existing functions: https://codex.wordpress.org/Function_Reference
 
 Before building a functions.php page determine if you're going to need the functionality across muiltiple themes, if so; build a plugin instead: https://codex.wordpress.org/Plugins
@@ -181,6 +180,3 @@ Here's a [how-to](http://wptavern.com/anadama-an-example-wordpress-recipe-theme-
 [Anadama]([http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react) for an example. Here's  [Github](https://github.com/ryelle/Anadama-React) links
 
 [Foxhound](https://themes.redradar.net/foxhound/) is another example. Here's [Github](https://github.com/ryelle/Foxhound) links
-
-
->>>>>>> 2a8f76bee211e45f67367e1cf64c9395b5d2fc3e
