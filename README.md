@@ -155,7 +155,7 @@ https://codex.wordpress.org/Theme_Development keep in touch with this for inform
 
 Information regarding existing functions: https://codex.wordpress.org/Function_Reference
 
-Before building a functions.php page determine if you're going to need the functionality across muiltiple themes, if so; build a plugin instea: https://codex.wordpress.org/Plugins
+Before building a functions.php page determine if you're going to need the functionality across muiltiple themes, if so; build a plugin instead: https://codex.wordpress.org/Plugins
 
 
 #####_Give it five minutes_######
