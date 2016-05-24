@@ -159,3 +159,28 @@ https://codex.wordpress.org/Theme_Development keep in touch with this for inform
 Information regarding existing functions: https://codex.wordpress.org/Function_Reference
 
 Before building a functions.php page determine if you're going to need the functionality across muiltiple themes, if so; build a plugin instead: https://codex.wordpress.org/Plugins
+
+#####_Give it five minutes_######
+
+*_ReAct (ing)_*
+
+I gave react five minutes of my time.
+
+It looks fascinating and like a bit of fun; but - I'm not going to use is for the WP theme.
+
+I'm not in need of a method to access my site through an API - I'll stick to Javascript and CSS, I think... I THINK.
+
+and [Final Consideration](http://www.benmccann.com/todo-mvc-angular-vs-react/)
+
+*In case I change my mind:*
+
+Here's a [how-to](http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react)
+
+[Rest Api Plugin](https://wordpress.org/plugins/rest-api/)
+
+[Anadama]([http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react) for an example. Here's  [Github](https://github.com/ryelle/Anadama-React) links
+
+[Foxhound](https://themes.redradar.net/foxhound/) is another example. Here's [Github](https://github.com/ryelle/Foxhound) links
+
+
+>>>>>>> 2a8f76bee211e45f67367e1cf64c9395b5d2fc3e
