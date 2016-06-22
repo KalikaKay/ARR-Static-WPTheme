@@ -42,13 +42,18 @@ function a_rosebud_rejoicing_customize_register( $wp_customize ) {
 	// Rename the label to "Display Site Title & Tagline" in order to make this option extra clear.
 	$wp_customize->get_control( 'display_header_text' )->label = __( 'Display Site Title &amp; Tagline', 'a_rosebud_rejoicing' );
 
+	// Hide core sections/controls when they aren't used on the current page.
+	//$wp_customize->get_section( 'header_image' )->active_callback = 'is_front_page';
+
 	// Add custom description to Colors and Background controls or sections.
 	if ( property_exists( $wp_customize->get_control( 'background_color' ), 'description' ) ) {
 		$wp_customize->get_control( 'background_color' )->description = __( 'May only be visible on wide screens.', 'a_rosebud_rejoicing' );
 		$wp_customize->get_control( 'background_image' )->description = __( 'May only be visible on wide screens.', 'a_rosebud_rejoicing' );
+
 	} else {
 		$wp_customize->get_section( 'colors' )->description           = __( 'Background may only be visible on wide screens.', 'a_rosebud_rejoicing' );
 		$wp_customize->get_section( 'background_image' )->description = __( 'Background may only be visible on wide screens.', 'a_rosebud_rejoicing' );
+		$wp_customize->get_section( 'header_image' )->description = __( 'Think Tank.', 'a_rosebud_rejoicing' );
 	}
 
 
@@ -60,6 +65,67 @@ function a_rosebud_rejoicing_customize_register( $wp_customize ) {
 	) );
  */
 
+ //Header Image Direction
+ $wp_customize->add_setting( 'HI_Direction', array(
+ 	'default'=> home_url( '/' ),
+ 	'type' => 'theme_mod',
+ 	'sanitize_callback' => 'esc_url',
+ 	'transport' => 'postMessage',
+ ) );
+
+ //Header Image Direction
+ $wp_customize->add_control( 'HI_Direction', array(
+ 	'label' 		=> __( 'Image URL', 'a-rosebud-rejoicing' ),
+	'description' => __( 'Enter the website URL', 'a-rosebud-rejoicing' ),
+	'type'     	=> 'textarea',
+ 	'section'	 	=> 'header_image',
+ 	'priority' 	=> 74,
+  ) );
+
+
+//Header Image Hover Text
+ $wp_customize->add_setting( 'HI_hover_text', array(
+	 'type' => 'theme_mod',
+	 'sanitize_callback' => 'esc_textarea',
+	 'transport' => 'postMessage',
+ ) );
+
+ //Header Image Hover Text
+ $wp_customize->add_control( 'HI_hover_text', array(
+	 'label'    => __( 'Hover Text', 'a-rosebud-rejoicing' ),
+	 'description' => __( 'Select the text to appear on hover.', 'a-rosebud-rejoicing' ),
+	 'type'     => 'textarea',
+	 'section'  => 'header_image',
+	 'priority' => 75,
+  ) );
+
+  //Header Image Hover Image
+	$wp_customize->add_setting( 'HI_hover_image', array(
+ 	 'type' => 'theme_mod',
+ 	 'sanitize_callback' => 'absint',
+ 	 'transport' => 'postMessage',
+  ) );
+
+ 	 /* Header Image Hover Image, sans the cropping
+  $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'HI_hover_image', array(
+ 	 'label' => __( 'Hover Image', 'a-rosebud-rejoicing' ),
+	 'description' => __( 'Select the image to appear on hover.', 'a-rosebud-rejoicing' ),
+ 	 'section' => 'header_image',
+	 'mime_type' => 'image',
+ 	 'priority' => 76,
+   ) ) );
+	 */
+	 $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'HI_hover_image', array(
+    'section'     => 'header_image',
+		'description' => __( 'Select the image to appear on hover.', 'a-rosebud-rejoicing' ),
+    'label'       => __(  'Hover Image', 'a-rosebud-rejoicing' ),
+    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+    'flex_height' => true, // Require the resulting image to be exactly as tall as the height attribute (default).
+    'width'       => 170,
+    'height'      => 150,
+    ) ) );
+
+	// header background color picker
 	$wp_customize->add_setting( 'header_background_color', array(
 		'default'=> '#e1efe9',
 		'type' => 'theme_mod',
@@ -67,7 +133,7 @@ function a_rosebud_rejoicing_customize_register( $wp_customize ) {
 		'transport' => 'postMessage',
 	) );
 
-		// header background color picker
+	// header background color picker
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_background_color', array(
 		'label' => __( 'Hair Color', 'a-rosebud-rejoicing' ),
 		'section' => 'colors',
@@ -116,32 +182,6 @@ function a_rosebud_rejoicing_customize_partial_blogname() {
 function a_rosebud_rejoicing_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
-
-
-/**
- * Add contextual help to the Themes and Post edit screens.
- *
- * @since A Rosebud Rejoicing 1.0
- */
-function a_rosebud_rejoicing_contextual_help() {
-	if ( 'admin_head-edit.php' === current_filter() && 'post' !== $GLOBALS['typenow'] ) {
-		return;
-	}
-
-	get_current_screen()->add_help_tab( array(
-		'id'      => 'a_rosebud_rejoicing',
-		'title'   => __( 'A Rosebud Rejoicing', 'a_rosebud_rejoicing' ),
-		'content' =>
-			'<ul>' .
-				'<li>' . sprintf( __( 'The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by a <a href="%1$s">tag</a>; you can change the tag and layout in <a href="%2$s">Appearance &rarr; Customize</a>. If no posts match the tag, <a href="%3$s">sticky posts</a> will be displayed instead.', 'a_rosebud_rejoicing' ), esc_url( add_query_arg( 'tag', _x( 'featured', 'featured content default tag slug', 'a_rosebud_rejoicing' ), admin_url( 'edit.php' ) ) ), admin_url( 'customize.php' ), admin_url( 'edit.php?show_sticky=1' ) ) . '</li>' .
-				'<li>' . sprintf( __( 'Enhance your site design by using <a href="%s">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. A Rosebud Rejoicing uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page.', 'a_rosebud_rejoicing' ), 'https://codex.wordpress.org/Post_Thumbnails#Setting_a_Post_Thumbnail' ) . '</li>' .
-				'<li>' . sprintf( __( 'For an in-depth tutorial, and more tips and tricks, visit the <a href="%s">A Rosebud Rejoicing documentation</a>.', 'a_rosebud_rejoicing' ), 'https://codex.wordpress.org/Twenty_Fourteen' ) . '</li>' .
-			'</ul>',
-	) );
-}
-
-add_action( 'admin_head-themes.php', 'a_rosebud_rejoicing_contextual_help' );
-add_action( 'admin_head-edit.php',   'a_rosebud_rejoicing_contextual_help' );
 
 
 //trying to figure this one out. Meanwhile esc_url_raw works... we'll use that until...

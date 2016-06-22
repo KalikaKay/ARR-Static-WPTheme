@@ -11,6 +11,7 @@
  * @uses a_rosebud_rejoicing_header_style()
  */
 function a_rosebud_rejoicing_custom_header_setup() {
+	/*
 	add_theme_support( 'custom-header', apply_filters( 'a_rosebud_rejoicing_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
@@ -19,7 +20,19 @@ function a_rosebud_rejoicing_custom_header_setup() {
 		'flex-height'            => true,
 		'wp-head-callback'       => 'a_rosebud_rejoicing_header_style',
 	) ) );
+} */
+
+	add_theme_support( 'custom-header', apply_filters( 'a_rosebud_rejoicing_custom_header_args', array(
+		'default-image'          => '',
+		'default-text-color'     => '000000',
+		'width'                  => 170,
+		'height'                 => 150,
+		'flex-height'            => true,
+		'flex-width'    				 => true,
+		'wp-head-callback'       => 'a_rosebud_rejoicing_header_style',
+	) ) );
 }
+
 add_action( 'after_setup_theme', 'a_rosebud_rejoicing_custom_header_setup' );
 
 if ( ! function_exists( 'a_rosebud_rejoicing_header_style' ) ) :
@@ -30,7 +43,8 @@ if ( ! function_exists( 'a_rosebud_rejoicing_header_style' ) ) :
  */
 function a_rosebud_rejoicing_header_style() {
 	$header_text_color = get_header_textcolor();
-	$textingit = "A Rosebud Rejoicing: Mixed Media on Digital";
+	$textingit = get_theme_mod('HI_hover_text');
+	$header_hover_image =  wp_get_attachment_url( get_theme_mod('HI_hover_image') );
 	/*
 	 * If no custom options for text are set, let's bail.
 	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
@@ -73,6 +87,7 @@ function a_rosebud_rejoicing_header_style() {
 
 	<?php
 		// If the user has set a custom image use that.
+		//background-image: url('http://devblogarosebudrejoicing-kalikakay.rhcloud.com/wp-content/uploads/2016/05/cropped-BlackandWhite-e1464223943180.jpg');
 		else :
 	?>
 
@@ -82,18 +97,18 @@ function a_rosebud_rejoicing_header_style() {
 
 
 		.site-logo:hover {
-			background-image: url('http://devblogarosebudrejoicing-kalikakay.rhcloud.com/wp-content/uploads/2016/05/cropped-BlackandWhite-e1464223943180.jpg');
+			background-image: url('<?php echo $header_hover_image; ?> ');
+			cursor: not-allowed;
 		}
 
 		.site-logo:hover ~ .site-logo-description:after {
 
-			content:'<?php echo $textingit ?>';
+			content:'<?php echo $textingit; ?>';
 			border-style: double;
 			position:absolute;
 			background-color: #999999;
 			margin: 7.5em 0 0 0;
 			color: #e2e2e2;
-			cursor: not-allowed;
 			text-indent: 0;
 			padding: 0 0.5em 0 0.5em;
 		}

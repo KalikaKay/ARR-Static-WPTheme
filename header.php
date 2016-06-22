@@ -33,8 +33,9 @@
 						2.) Url points to customizer URL.
 						3.) By Default; I want to get naked.
 					*/
+					$logo_direct = get_theme_mod('HI_Direction');
 					if ( get_header_image() ) : ?>
-						<a class="logo-direct" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<a class="logo-direct" href="<?php echo $logo_direct ?>" rel="home">
 							<div class="site-logo"></div>
 							<div class="site-logo-description"></div>
 						</a>
