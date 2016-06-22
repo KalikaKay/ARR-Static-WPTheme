@@ -2,7 +2,11 @@
 ######*A Rosebud Rejoicing WordPress Theme, Static Version*######
 
 A Rosebud Rejoicing dev: http://devblogarosebudrejoicing-kalikakay.rhcloud.com/
+
 Theme 101: https://developer.wordpress.org/themes/getting-started/
+
+Custom Media Controls: https://make.wordpress.org/core/2015/07/16/new-customizer-media-controls-in-4-3-and-4-2/
+
 
 *_Clueless Developer Questions:_*
 
@@ -12,6 +16,7 @@ _Upload option available on WordPress theme tab. There's also cool [developer to
 _Is there a simple base theme to build from?_
 _[underscores](https://github.com/Automattic/_s/) is availble on github.
 Prior to download, review the README. Especially if you're feeling lazy._
+
 
 ######OpenShit Server Dev Variable Set#######
 It is recommended/requested that you .. you know make sure your theme doesn't have errors.
