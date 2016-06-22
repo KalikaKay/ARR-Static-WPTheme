@@ -1,21 +1,33 @@
 # ARR-Static-WPTheme
 ######*A Rosebud Rejoicing WordPress Theme, Static Version*######
 
-Development at: http://devblogarosebudrejoicing-kalikakay.rhcloud.com/
+A Rosebud Rejoicing dev: http://devblogarosebudrejoicing-kalikakay.rhcloud.com/
+Theme 101: https://developer.wordpress.org/themes/getting-started/
+
+*_Clueless Developer Questions:_*
+
+_How do I use a theme not available in WP hub?_
+_Upload option available on WordPress theme tab. There's also cool [developer tools](https://developer.wordpress.org/themes/getting-started/setting-up-a-development-environment/) available._
+
+_Is there a simple base theme to build from?_
+_[underscores](https://github.com/Automattic/_s/) is availble on github.
+Prior to download, review the README. Especially if you're feeling lazy._
 
 ######OpenShit Server Dev Variable Set#######
+It is recommended/requested that you .. you know make sure your theme doesn't have errors.
 ```
 $ rhc env set APPLICATION_ENV=development -a <app-name>
 
 $ rhc app restart -a <app-name>
 ```
 
-###Oh, my GOD! most gorgeous instructions I've ever seen in my life!!!!!###
+###Oh, my GOD! Most gorgeous description I've ever seen!!!!!###
 
 https://yoast.com/wordpress-theme-anatomy/
 
 
 ###Regarding OpenShift Themes###
+
 When you upload plugins and themes, they'll get put into your OpenShift
 data directory on the gear ($OPENSHIFT_DATA_DIR).
 
@@ -23,13 +35,14 @@ If you'd like to check these into source control, download the plugins
 and themes directories and then check them directly into
 `.openshift/themes` and `.openshift/plugins`.
 
+Use Git. Clone the site. Add, commit, push, the files.
+
 #####Wordpress Reference#####
 https://codex.wordpress.org/Theme_Development
 
 https://developer.wordpress.org/reference/
 
 ######*Theme approval*######
-
 https://make.wordpress.org/themes/handbook/review/
 
 ####Important Files####
@@ -163,20 +176,17 @@ Before building a functions.php page determine if you're going to need the funct
 
 *_ReAct (ing)_*
 
-I gave react five minutes of my time.
+I gave ReAct five minutes of my time. I'm not going to use for this WP theme.
 
-It looks fascinating and like a bit of fun; but - I'm not going to use is for the WP theme.
+[Scalar](http://www.benmccann.com/todo-mvc-angular-vs-react/)
 
-I'm not in need of a method to access my site through an API - I'll stick to Javascript and CSS, I think... I THINK.
+*_Not over ReAct (ing)_*
 
-and [Final Consideration](http://www.benmccann.com/todo-mvc-angular-vs-react/)
-
-*In case I change my mind:*
-
-Here's a [how-to](http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react)
+_Vectors-_
 
 [Rest Api Plugin](https://wordpress.org/plugins/rest-api/)
 
+[how to](http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react)
 [Anadama]([http://wptavern.com/anadama-an-example-wordpress-recipe-theme-based-on-react) for an example. Here's  [Github](https://github.com/ryelle/Anadama-React) links
 
 [Foxhound](https://themes.redradar.net/foxhound/) is another example. Here's [Github](https://github.com/ryelle/Foxhound) links
